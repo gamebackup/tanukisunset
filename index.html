@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gamebackup/tanukisunset@refs/heads/main/TemplateData/style.css">
     <script src="https://cdn.jsdelivr.net/gh/gamebackup/tanukisunset@refs/heads/main/Build/UnityLoader.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/gamebackup/tanukisunset@refs/heads/main/Build/WebGL.json");
-    </script>
+  var buildUrl = "https://cdn.jsdelivr.net/gh/gamebackup/tanukisunset@main/Build/";
+  var gameInstance = UnityLoader.instantiate("gameContainer", buildUrl + "WebGL.json", {
+    dataUrl: buildUrl + "WebGL.data.unityweb",
+    wasmCodeUrl: buildUrl + "WebGL.wasm.code.unityweb",
+    wasmFrameworkUrl: buildUrl + "WebGL.wasm.framework.unityweb"
+  });
+</script>
   </head>
   <body>
     <div class="webgl-content">
